@@ -1,0 +1,36 @@
+import java.util.*;
+
+public class SteppingNumber{
+    static boolean SteppingNumber(int num)
+    {
+        if(num<10) return true;
+        int prev_number=num%10;
+        num/=10;
+        while(num!=0)
+        {
+            int curr_number=num%10;
+            int diff=Math.abs(prev_number-curr_number);
+            if(diff!=1)
+            {
+                return false;
+            }
+            prev_number=curr_number;
+            num/=10;
+        }
+        return true;
+    }
+    public static void main(String args[])
+    {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("enter the number: ");
+        int num=sc.nextInt();
+        if(SteppingNumber(num))
+        {
+            System.out.println("it is a stepping number "+num);
+        }
+        else
+        {
+            System.out.println("it is not a stepping number "+num);
+        }
+    }
+}
