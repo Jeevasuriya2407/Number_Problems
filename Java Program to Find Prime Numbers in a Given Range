@@ -1,0 +1,43 @@
+import java.util.*;
+
+class PrimeNumber{
+    
+     static boolean isPrime(int num)
+    {
+        if(num<2) return false;
+        for(int i=2;i<=Math.sqrt(num);i++)
+        {
+            if(num%i==0)
+            {
+                return false;
+            }
+               
+        }
+        return true;
+    }
+    
+    public static void main(String args[])
+    {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("enter the starting range: ");
+        int start=sc.nextInt();
+        System.out.println("enter the ending range: ");
+        int end=sc.nextInt();
+        
+        boolean isPrime=true;
+        
+        for(int i=start;i<=end;i++)
+        {
+           if(isPrime(i))
+           {
+               System.out.println("it is a prime number "+i);
+           }
+           else
+           {
+               System.out.println("it is not a prime number "+i);
+           }
+            
+        }
+   
+    }
+}
