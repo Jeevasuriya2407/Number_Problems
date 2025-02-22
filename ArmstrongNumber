@@ -1,0 +1,28 @@
+import java.util.*;
+
+class ArmstrongNumber{
+    public static void main(String args[])
+    {
+        Scanner sc=new Scanner(System.in);
+        System.out.print("enter the number: \n");
+        int num=sc.nextInt();
+        int temp=num;
+        int rem,rev=0;
+        
+        while(temp!=0)
+        {
+            rem=temp%10;
+            rev=(int)Math.pow(rem,3)+rev;
+            temp/=10;
+        }
+        
+        if(num==rev)
+        {
+            System.out.println("it is a armstrong number "+num);
+        }
+        else
+        {
+            System.out.println("it is not a armstrong number "+num);
+        }
+    }
+}
